@@ -301,16 +301,16 @@ public class CusTripCoeditMsgJDBCDAO implements CusTripCoeditMsgDAO_interface {
 //		System.out.print(cusTripCoeditMsgVO3.getContent()+" ，  ");
 //		System.out.println(cusTripCoeditMsgVO3.getDateRecord());
 		
-		//query all data
-//		List<CusTripCoeditMsgVO> list = dao.getAll();
-//		for(CusTripCoeditMsgVO cusTripCoeditMsgVO4 : list){
-//			System.out.print(cusTripCoeditMsgVO4.getCusTripCoeditMsgId()+" ，  ");
-//			System.out.print(cusTripCoeditMsgVO4.getCusTripId()+" ，  ");
-//			System.out.print(cusTripCoeditMsgVO4.getCusId()+" ，  ");
-//			System.out.print(cusTripCoeditMsgVO4.getContent()+" ，  ");
-//			System.out.println(cusTripCoeditMsgVO4.getDateRecord());
-//			System.out.println("----------------------------");
-//		}
+//		query all data
+		List<CusTripCoeditMsgVO> list = dao.getAll();
+		for(CusTripCoeditMsgVO cusTripCoeditMsgVO4 : list){
+			System.out.print(cusTripCoeditMsgVO4.getCusTripCoeditMsgId()+" ，  ");
+			System.out.print(cusTripCoeditMsgVO4.getCusTripId()+" ，  ");
+			System.out.print(cusTripCoeditMsgVO4.getCusId()+" ，  ");
+			System.out.print(cusTripCoeditMsgVO4.getContent()+" ，  ");
+			System.out.println(cusTripCoeditMsgVO4.getDateRecord());
+			System.out.println("----------------------------");
+		}
 		
 	}
 

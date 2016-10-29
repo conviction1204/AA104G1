@@ -284,7 +284,7 @@ public class CusTripJDBCDAO implements CusTripDAO_interface {
 		//insert
 //		CusTripVO cusTripVO1 = new CusTripVO();
 //		cusTripVO1.setCusId("CU000001");
-//		cusTripVO1.setTripName("花蓮之旅");
+//		cusTripVO1.setTripName("��銋��");
 //		cusTripVO1.setDateSt(java.sql.Date.valueOf("2017-01-15"));
 //		cusTripVO1.setShareYn("N");
 //		dao.insert(cusTripVO1);
@@ -293,7 +293,7 @@ public class CusTripJDBCDAO implements CusTripDAO_interface {
 //		CusTripVO cusTripVO2 = new CusTripVO();
 //		cusTripVO2.setCusTripId("CT000011");
 //		cusTripVO2.setCusId("CU000003");
-//		cusTripVO2.setTripName("宜蘭之旅");
+//		cusTripVO2.setTripName("摰銋��");
 //		cusTripVO2.setDateSt(java.sql.Date.valueOf("2017-01-15"));
 //		cusTripVO2.setShareYn("Y");
 //		cusTripVO2.setShareDate(java.sql.Timestamp.valueOf("2017-03-03 18:00:00"));
@@ -304,22 +304,22 @@ public class CusTripJDBCDAO implements CusTripDAO_interface {
 		
 		//query one data
 //		CusTripVO cusTripVO3 = dao.findByPrimaryKey("CT000011");
-//		System.out.print(cusTripVO3.getCusTripId()+" ，  ");
-//		System.out.print(cusTripVO3.getCusId()+" ，  ");
-//		System.out.print(cusTripVO3.getTripName()+" ，  ");
-//		System.out.print(cusTripVO3.getDateSt()+" ，  ");		
-//		System.out.print(cusTripVO3.getShareYn()+" ，  ");
+//		System.out.print(cusTripVO3.getCusTripId()+" 嚗�  ");
+//		System.out.print(cusTripVO3.getCusId()+" 嚗�  ");
+//		System.out.print(cusTripVO3.getTripName()+" 嚗�  ");
+//		System.out.print(cusTripVO3.getDateSt()+" 嚗�  ");		
+//		System.out.print(cusTripVO3.getShareYn()+" 嚗�  ");
 //		System.out.println(cusTripVO3.getShareDate());
 
 		
 		//query all data
 //		List<CusTripVO> list = dao.getAll();
 //		for(CusTripVO cusTripVO4 : list){
-//			System.out.print(cusTripVO4.getCusTripId()+" ，  ");
-//			System.out.print(cusTripVO4.getCusId()+" ，  ");
-//			System.out.print(cusTripVO4.getTripName()+" ，  ");
-//			System.out.print(cusTripVO4.getDateSt()+" ，  ");
-//			System.out.print(cusTripVO4.getShareYn()+" ，  ");
+//			System.out.print(cusTripVO4.getCusTripId()+" 嚗�  ");
+//			System.out.print(cusTripVO4.getCusId()+" 嚗�  ");
+//			System.out.print(cusTripVO4.getTripName()+" 嚗�  ");
+//			System.out.print(cusTripVO4.getDateSt()+" 嚗�  ");
+//			System.out.print(cusTripVO4.getShareYn()+" 嚗�  ");
 //			System.out.println(cusTripVO4.getShareDate());
 //			System.out.println("----------------------------");
 //		}
