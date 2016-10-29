@@ -6,8 +6,8 @@ import java.sql.*;
 public class CusTripJDBCDAO implements CusTripDAO_interface {
 	String driver = "oracle.jdbc.driver.OracleDriver";
 	String url = "jdbc:oracle:thin:@localhost:1521:XE";
-	String userid = "TravelFun";
-	String passwd = "travelfun";
+	String userid = "FUN";
+	String passwd = "aa104g1";
 	
 	private static final String INSERT_STMT =
 			"INSERT INTO cus_trip ( cus_trip_id, cus_id, trip_name, date_st, share_yn, share_date) VALUES ('CT'||LPAD(CUS_TRIP_ID_SEQ.NEXTVAL,6,'0'), ?, ?, ?, ?, ?)";
