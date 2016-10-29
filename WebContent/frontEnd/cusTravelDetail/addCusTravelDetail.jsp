@@ -66,14 +66,14 @@ CusTravelDetailVO cusTravelDetailVO = (CusTravelDetailVO) request.getAttribute("
 	</tr>
 	<tr>
 		<td>內文:</td>
-		<td><input type="TEXT" name="sal" size="45"
+		<td><input type="TEXT" name="content" size="45"
 			value="<%= (cusTravelDetailVO==null)? "你媽知道你在這裡發廢文嗎!?!" : cusTravelDetailVO.getContent()%>" /></td>
 	</tr>
 	
 
 	<jsp:useBean id="cusTravelNoteSvc" scope="page" class="com.cusTravelNote.model.CusTravelNoteService" />
 	<tr>
-		<td>遊記編號:<font color=red><b>*</b></font></td>
+		<td>遊記名稱:<font color=red><b>*</b></font></td>
 		<td><select size="1" name="cusTravelNoteId">
 			<c:forEach var="cusTravelNoteVO" items="${cusTravelNoteSvc.all}">
 				<option value="${cusTravelNoteVO.cusTravelNoteId}" ${(cusTravelDetailVO.cusTravelNoteId==cusTravelNoteVO.cusTravelNoteId)? 'selected':'' } >${cusTravelNoteVO.noteName}

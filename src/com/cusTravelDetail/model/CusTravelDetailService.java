@@ -10,12 +10,11 @@ public class CusTravelDetailService {
 		dao = new CusTravelDetailDAO();
 	}
 
-	public CusTravelDetailVO addCusTravelDetail(String cusTravelDetailId, String cusTravelNoteId,java.sql.Date dateRecord, String content, 
+	public CusTravelDetailVO addCusTravelDetail(String cusTravelNoteId,java.sql.Date dateRecord, String content, 
 			String detailName) {
 
 		CusTravelDetailVO cusTravelDetailVO = new CusTravelDetailVO();
 
-		cusTravelDetailVO.setCusTravelDetailId(cusTravelDetailId);
 		cusTravelDetailVO.setCusTravelNoteId(cusTravelNoteId);
 		cusTravelDetailVO.setDateRecord(dateRecord);
 		cusTravelDetailVO.setContent(content);

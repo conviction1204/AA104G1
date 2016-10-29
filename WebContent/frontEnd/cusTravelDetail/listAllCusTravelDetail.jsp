@@ -48,20 +48,20 @@
 	<c:forEach var="cusTravelDetailVO" items="${list}" begin="<%=pageIndex%>" end="<%=pageIndex+rowsPerPage-1%>">
 		<tr align='center' valign='middle'>
 			<td>${cusTravelDetailVO.cusTravelDetailId}</td>
-			<td>${cusTravelDetailVO.content}</td>
+			<td>${cusTravelDetailVO.detailName}</td>
 			<td>${cusTravelDetailVO.dateRecord}</td>
 			<td>${cusTravelDetailVO.content}</td>
 			<td>${cusTravelDetailVO.cusTravelNoteId}</td>
 			<td>
-			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/emp/emp.do">
+			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/frontEnd/cusTravelDetail/cusTravelDetail.do">
 			     <input type="submit" value="修改">
-			     <input type="hidden" name="empno" value="${empVO.empno}">
+			     <input type="hidden" name="cusTravelDetailId" value="${cusTravelDetailVO.cusTravelDetailId}">
 			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
 			</td>
 			<td>
-			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/emp/emp.do">
+			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/frontEnd/cusTravelDetail/cusTravelDetail.do">
 			    <input type="submit" value="刪除">
-			    <input type="hidden" name="empno" value="${empVO.empno}">
+			    <input type="hidden" name="cusTravelDetailId" value="${cusTravelDetailVO.cusTravelDetailId}">
 			    <input type="hidden" name="action"value="delete"></FORM>
 			</td>
 		</tr>
