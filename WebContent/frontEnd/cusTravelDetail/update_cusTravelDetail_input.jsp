@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="com.cusTravelDetail.model.*"%>
 <%
-	CusTravelDetailVO cusTravelDetailVO = (CusTravelDetailVO) request.getAttribute("cusTravelDetailVO"); //CusTravelDetailServlet.java (Concroller), 存入req的CusTravelDetailVO物件 (包括幫忙取出的CusTravelDetailVO, 也包括輸入資料錯誤時的CusTravelDetailVO物件)
+CusTravelDetailVO cusTravelDetailVO = (CusTravelDetailVO) request.getAttribute("cusTravelDetailVO"); //CusTravelDetailServlet.java (Concroller), 存入req的CusTravelDetailVO物件 (包括幫忙取出的CusTravelDetailVO, 也包括輸入資料錯誤時的CusTravelDetailVO物件)
 %>
 <html>
 <head>
@@ -37,21 +37,22 @@
 <table border="0">
 	<tr>
 		<td>遊記細節編號:<font color=red><b>*</b></font></td>
-		<td><%=cusTravelDetailVO.getCusTravelDetailId()%></td>
+		<td>${cusTravelDetailVO.cusTravelDetailId}</td>
 	</tr>
 	<tr>
 		<td>遊記編號:</td>
-		<td><input type="TEXT" name="cusTravelNoteId" size="45" value="<%=cusTravelDetailVO.getCusTravelNoteId()%>" /></td>
+		<td><input type="TEXT" name="cusTravelNoteId" size="45" value="<%= (cusTravelDetailVO==null)? "CTN000001" : cusTravelDetailVO.getCusTravelNoteId()%>" /></td>
 	</tr>
 	<tr>
 		<td>遊記標題名稱:</td>
-		<td><input type="TEXT" name="detailName" size="45"	value="<%=cusTravelDetailVO.getDetailName()%>" /></td>
+		<td><input type="TEXT" name="detailName" size="45"	value="<%= (cusTravelDetailVO==null)? "遊記細節名稱" : cusTravelDetailVO.getDetailName()%>" /></td>
 	</tr>
 	<tr>
+		<%java.sql.Date date_SQL = new java.sql.Date(System.currentTimeMillis());%>
 		<td>日期:</td>
 		<td bgcolor="#CCCCFF">
 		    <input class="cal-TextBox"
-			onFocus="this.blur()" size="9" readonly type="text" name="dateRecord" value="<%=cusTravelDetailVO.getDateRecord()%>">
+			onFocus="this.blur()" size="9" readonly type="text" name="dateRecord" value="<%= (cusTravelDetailVO==null)? date_SQL : cusTravelDetailVO.getDateRecord()%>">
 			<a class="so-BtnLink"
 			href="javascript:calClick();return false;"
 			onmouseover="calSwapImg('BTN_date', 'img_Date_OVER',true);"
@@ -62,7 +63,7 @@
 	</tr>
 	<tr>
 		<td>內文:</td>
-		<td><input type="TEXT" name="content" size="45"	value="<%=cusTravelDetailVO.getContent()%>" /></td>
+		<td><input type="TEXT" name="content" size="45"	value="${(cusTravelDetailVO==null)? '內文': cusTravelDetailVO.content}" /></td>
 	</tr>
 	
 
@@ -79,7 +80,7 @@
 </table>
 <br>
 <input type="hidden" name="action" value="update">
-<input type="hidden" name="cusTravelDetailId" value="<%=cusTravelDetailVO.getCusTravelDetailId()%>">
+<input type="hidden" name="cusTravelDetailId" value="${cusTravelDetailVO.cusTravelDetailId}">
 <input type="submit" value="送出修改"></FORM>
 
 </body>

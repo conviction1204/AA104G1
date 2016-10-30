@@ -118,7 +118,7 @@ public class CusTravelDetailServlet extends HttpServlet {
 		}
 		
 		
-		if ("update".equals(action)) { // 來自update_emp_input.jsp的請求
+		if ("update".equals(action)) { // 來自update_cusTravelDetail_input.jsp的請求
 			
 			List<String> errorMsgs = new LinkedList<String>();
 			// Store this set in the request scope, in case we need to
@@ -128,8 +128,32 @@ public class CusTravelDetailServlet extends HttpServlet {
 			try {
 				/***************************1.接收請求參數 - 輸入格式的錯誤處理**********************/
 				String cusTravelDetailId = new String(req.getParameter("cusTravelDetailId").trim());
-				String cusTravelNoteId = req.getParameter("cusTravelNoteId").trim();
+				
+				
+				
+				String str = req.getParameter("cusTravelNoteId");
+				if (str == null || (str.trim()).length() == 0) {
+					errorMsgs.add("請輸入遊記編號");
+				}
+				// Send the use back to the form, if there were errors
+				if (!errorMsgs.isEmpty()) {
+					RequestDispatcher failureView = req
+							.getRequestDispatcher("/frontEnd/cusTravelDetail/update_cusTravelDetail_input.jsp");
+					failureView.forward(req, res);
+					return;//程式中斷
+				}
+				String cusTravelNoteId = null;
+				try {
+					cusTravelNoteId = new String(str);
+				} catch (Exception e) {
+					errorMsgs.add("遊記編號格式不正確");
+				}
+				
+				
+				
 				String detailName = req.getParameter("detailName").trim();				
+				
+				
 				
 				java.sql.Date dateRecord = null;
 				try {
@@ -152,7 +176,7 @@ public class CusTravelDetailServlet extends HttpServlet {
 
 				CusTravelDetailVO cusTravelDetailVO = new CusTravelDetailVO();
 				cusTravelDetailVO.setCusTravelDetailId(cusTravelDetailId);
-				cusTravelDetailVO.setCusTravelDetailId(cusTravelNoteId);
+				cusTravelDetailVO.setCusTravelNoteId(cusTravelNoteId);
 				cusTravelDetailVO.setDateRecord(dateRecord);
 				cusTravelDetailVO.setContent(content);
 				cusTravelDetailVO.setDetailName(detailName);
@@ -164,7 +188,7 @@ public class CusTravelDetailServlet extends HttpServlet {
 					RequestDispatcher failureView = req
 							.getRequestDispatcher("/frontEnd/cusTravelDetail/update_cusTravelDetail_input.jsp");
 					failureView.forward(req, res);
-					return; //程式中斷
+					return;
 				}
 				
 				/***************************2.開始修改資料*****************************************/
@@ -179,7 +203,7 @@ public class CusTravelDetailServlet extends HttpServlet {
 
 				/***************************其他可能的錯誤處理*************************************/
 			} catch (Exception e) {
-				errorMsgs.add("修改資料失敗:"+e.getMessage());
+				errorMsgs.add("錯誤處理:"+e.getMessage());
 				RequestDispatcher failureView = req
 						.getRequestDispatcher("/frontEnd/cusTravelDetail/update_cusTravelDetail_input.jsp");
 				failureView.forward(req, res);
